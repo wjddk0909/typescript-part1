@@ -1,0 +1,13 @@
+{
+  "compilerOptions": { // 컴파일할때 부가적인 옵션 - 타입스크립트가 이 프로젝트를 어떻게 이해할지 정의
+    "allowJs": true, // 이 프로젝트 안에 자바스크립트를 허용하겠다.
+    "checkJs": true, // 이전에 살펴봤던 @ts-check, 자바스크립트에서 나름대로 타입스크립트의 기능들을 활용해보겠다, 타입스크립트의 타입검사를 자바스크립트에 녹여내겠다. 이런 역할을 하는 것이 checkJS
+    "noImplicitAny": true, // 타입 설정할 때 최소한 Any라는 타입이라도 설정해야된다는 뜻이다.
+    "module": "commonjs", // 'module'은 자바스크립트 파일간 import 문법을 구현할 때 어떤 문법을 쓸지 정하는 곳, commonjs는 require 문법
+    "target": "es5", // es5로 셋팅해놓으면 es5 버전 자바스크립트로 컴파일(변환)
+    "sourceMap": true // 해당하는 .map 파일을 생성합니다.
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
