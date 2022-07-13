@@ -13,3 +13,5 @@ function add(): number { // 함수안의 로직에 리턴값이 없으면 에러
 function sum2(a: number, b: number): number {
     return a + b
 }
+sum(10, 20); // 30
+sum(10, 20, 30); // 2개의 인수가 필요한데 3개를 넣었다는 에러가 뜸
