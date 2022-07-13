@@ -1,4 +1,4 @@
-let todoItems;
+let todoItems; // 할 일 목록 받는 변수
 
 // api
 function fetchTodoItems() {
@@ -12,19 +12,23 @@ function fetchTodoItems() {
 
 // crud methods
 function fetchTodos() {
+  // api 호출해서 변수에 담고 다시 반환
   const todos = fetchTodoItems();
   return todos;
 }
 
 function addTodo(todo) {
+  // 할 일을 추가
   todoItems.push(todo);
 }
 
 function deleteTodo(index) {
+  // 특정 인덱스에서 할 일 지우기
   todoItems.splice(index, 1);
 }
 
 function completeTodo(index, todo) {
+  // 특정 인덱스 할 일 완료
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
