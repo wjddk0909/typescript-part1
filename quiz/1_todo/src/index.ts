@@ -1,4 +1,4 @@
-let todoItems; // 할 일 목록 받는 변수
+let todoItems: any; // 할 일 목록 받는 변수
 
 // api
 function fetchTodoItems() {
@@ -17,7 +17,7 @@ function fetchTodos() {
   return todos;
 }
 
-function addTodo(todo) {
+function addTodo(todo): void {
   // 할 일을 추가
   todoItems.push(todo);
 }
