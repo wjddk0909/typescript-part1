@@ -1,7 +1,7 @@
-let todoItems: any; // 할 일 목록 받는 변수
+let todoItems: object[]; // 할 일 목록 받는 변수
 
 // api
-function fetchTodoItems() {
+function fetchTodoItems(): object[] {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -11,23 +11,23 @@ function fetchTodoItems() {
 }
 
 // crud methods
-function fetchTodos() {
+function fetchTodos(): object[] {
   // api 호출해서 변수에 담고 다시 반환
   const todos = fetchTodoItems();
   return todos;
 }
 
-function addTodo(todo): void {
+function addTodo(todo: object): void {
   // 할 일을 추가
   todoItems.push(todo);
 }
 
-function deleteTodo(index) {
+function deleteTodo(index: number): void {
   // 특정 인덱스에서 할 일 지우기
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index, todo) {
+function completeTodo(index: number, todo: object): void {
   // 특정 인덱스 할 일 완료
   todo.done = true;
   todoItems.splice(index, 1, todo);
