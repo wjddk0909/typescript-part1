@@ -1,7 +1,23 @@
-let todoItems: { id: number; title: string; done: boolean }[]; // 할 일 목록 받는 변수
+// type으로 선언하고 가져다 쓰는 방법도 있지만 interface를 사용하는 방법도 있다.
+// type Todo = {
+//   id: number;
+//   title: string;
+//   done: boolean;
+// };
+
+// let todoItems: Todo[]; // 할 일 목록 받는 변수
+
+interface Todo {
+  id: number;
+  title: string;
+  done: boolean;
+}
+
+let todoItems: Todo[]; // 할 일 목록 받는 변수
+// let todoItems: { id: number; title: string; done: boolean }[]; // 할 일 목록 받는 변수
 
 // api
-function fetchTodoItems(): { id: number; title: string; done: boolean }[] {
+function fetchTodoItems(): Todo[] {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -17,7 +33,7 @@ function fetchTodos(): object[] {
   return todos;
 }
 
-function addTodo(todo: { id: number; title: string; done: boolean }): void {
+function addTodo(todo: Todo): void {
   // 할 일을 추가
   todoItems.push(todo);
 }
@@ -27,10 +43,7 @@ function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(
-  index: number,
-  todo: { id: number; title: string; done: boolean }
-): void {
+function completeTodo(index: number, todo: Todo): void {
   // 특정 인덱스 할 일 완료
   todo.done = true;
   todoItems.splice(index, 1, todo);
