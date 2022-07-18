@@ -3,7 +3,7 @@ interface User {
     name: string;
 }
 
-// 변소에 인터페이스 활용
+// 변수에 인터페이스 활용
 const ellin: User = {
     age: 20,
     name: 'ellin'
