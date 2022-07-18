@@ -36,4 +36,20 @@ interface StringArray {
 }
 
 const arr: StringArray = ['a', 'b', 'c'];
-arr[0] = 10
+// arr[0] = 10
+
+interface StringRegexDictionary {
+    [key: string]: RegExp;
+}
+
+const obj: StringRegexDictionary = {
+    // sth: /abc/,
+    cssFile: /\.css$/, // css확장자로 끝나는 파일들
+    jsFile: /\.js$/, // js확장자로 끝나는 파일들
+}
+
+obj['cssFile'] = 'a' // 이럴때 에러를 바로 잡아주는 것도 타입스크립트의 장점
+
+Object.keys(obj).forEach(function (v) {
+    console.log(v)
+})
