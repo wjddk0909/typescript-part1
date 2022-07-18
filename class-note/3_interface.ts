@@ -17,4 +17,16 @@ const ja = {
     name: 'jungah',
     age: 35
 }
-getUser(ja)
+getUser(ja);
+
+// 함수의 스펙(구조)에 인터페이스를 활용
+interface SumFunction {
+    // 인자 a, b를 받고 각 인자의 데이터타입은 number, 그리고 반환값도 number이다.
+    (a: number, b: number): number
+}
+
+let sum: SumFunction;
+sum = function (a: number, b: number): number {
+    return a + b
+}
+;
