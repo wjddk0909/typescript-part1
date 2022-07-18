@@ -5,19 +5,19 @@ interface User {
 
 // 변소에 인터페이스 활용
 const ellin: User = {
-    age: 33,
-    name: 'Ellin'
+    age: 20,
+    name: 'ellin'
 }
 
 // 함수에 인터페이스 활용
 function getUser(user: User) {
     console.log(user);
 }
-const ja = {
-    name: 'jungah',
-    age: 35
+const ellin1 = {
+    name: 'ellin',
+    age: 20
 }
-getUser(ja);
+getUser(ellin1);
 
 // 함수의 스펙(구조)에 인터페이스를 활용
 interface SumFunction {
@@ -53,3 +53,20 @@ obj['cssFile'] = 'a' // 이럴때 에러를 바로 잡아주는 것도 타입스
 Object.keys(obj).forEach(function (v) {
     console.log(v)
 })
+
+
+// 인터페이스 확장
+interface Person {
+    name: string;
+    age: number;
+}
+
+interface Developer extends Person{
+    language: string;
+}
+
+const ellin2: Developer = {
+    name: 'elln',
+    age: 20,
+    language: 'ts'
+}
