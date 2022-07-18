@@ -18,3 +18,17 @@ function logMessage1(value: string | number) {
 }
 logMessage1('hello');
 logMessage1(100);
+
+interface Developer {
+    name: string;
+    skill: string;
+}
+
+interface Person {
+    name: string;
+    age: number;
+}
+function askSomeone(someone: Developer | Person) {
+    someone.name = 'abc';
+    someone.skill = 'javascript'
+}
