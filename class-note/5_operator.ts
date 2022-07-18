@@ -30,5 +30,12 @@ interface Person {
 }
 function askSomeone(someone: Developer | Person) {
     someone.name = 'abc';
+    // someone.skill = 'javascript'
+}
+function askSomeone2(someone: Developer & Person) {
+    someone.name = 'abc';
     someone.skill = 'javascript'
 }
+
+// const test1: string | number | boolean;
+// const test2: string & number & boolean;
