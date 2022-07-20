@@ -10,3 +10,9 @@ class Person {
 
 const ja = new Person('ellin', 20); // 생성 되었습니다.
 console.log(ja)
+
+// ES6이전 생성자 함수
+function Person(name, age) {
+    this.name = namme;
+    this.age = age;
+}
