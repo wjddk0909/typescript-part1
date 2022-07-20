@@ -13,6 +13,6 @@ console.log(ja)
 
 // ES6이전 생성자 함수
 function Person(name, age) {
-    this.name = namme;
+    this.name = name;
     this.age = age;
 }
