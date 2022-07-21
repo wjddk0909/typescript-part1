@@ -74,3 +74,17 @@ function logTextLength2<T>(text: T[]): T[] {
   return text;
 }
 logTextLength2(['hi']); // 배열로 전달하면 에러 해결, 제네릭의 타입 제한
+
+// 제네릭 타입 제한 2 - 정의된 타입 이용하기
+interface LengthType {
+  length: number;
+}
+
+function logTextLength3<T extends LengthType>(text: T): T { // length라는 프로퍼티가 있다고 생가가고 추론과정에서 error가 안난다.
+  text.length;
+  return text;
+}
+
+logTextLength3('a'); // string은 기본적으로 length 프로퍼티가 있기 때문에 추론과정에서 에러가 발생하지 않는다.
+logTextLength3(10); // number에는 length 프로퍼티가 없으므로 에러 발생
+logTextLength3({ length: 10 }); // length 프로퍼티만 보장이 되면 error발생 안함
