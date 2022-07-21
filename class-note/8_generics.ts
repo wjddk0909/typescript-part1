@@ -15,11 +15,13 @@
 // logText<string>('hi');
 // logText<number>(10);
 
-function logText(text: string) {
+function logText(text: string | number) {
     console.log(text);
-    text.split('').reverse().join('');
     return text;
 }
+
 logText('a');
-logText(10); // error
-logText(true) // error
+const a = logText('a');
+a.split('') // error
+logText(10);
+// logText(true) // error
