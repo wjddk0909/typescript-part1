@@ -51,3 +51,26 @@ function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
 getAllowedOptions('nothing');
 // const a = getAllowedOptions('name');
 // a.toUpperCase(); // Name
+
+// 제네릭의 타입 제한
+function logTextLength<T>(text: T): T {
+  console.log(text.length); // error가 발생: T에 length가 없다는 에러가 발생한다. 왜냐면 아직 typescript는 text에 타입이 어떤건지 모르기 때문
+
+  return text;
+}
+logTextLength('hi');
+
+// 제네릭의 타입 제한
+function logTextLength1<T>(text: T[]): T[] {
+  console.log(text.length); // 배열이 들어온다는 것을 알았기 때문에 에러 해결(배열에는 length 프로퍼티 존재)
+
+  return text;
+}
+logTextLength1('hi'); // 여기서는 아직 에러 발생, 인자에 데이터형태는 배열이 들어와야하는데 string이 들어왔기 때문
+
+// 제네릭의 타입 제한
+function logTextLength2<T>(text: T[]): T[] {
+  console.log(text.length); // 배열이 들어온다는 것을 알았기 때문에 에러 해결(배열에는 length 프로퍼티 존재)
+  return text;
+}
+logTextLength2(['hi']); // 배열로 전달하면 에러 해결, 제네릭의 타입 제한
