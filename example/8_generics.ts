@@ -88,3 +88,17 @@ function logTextLength3<T extends LengthType>(text: T): T { // length라는 프�
 logTextLength3('a'); // string은 기본적으로 length 프로퍼티가 있기 때문에 추론과정에서 에러가 발생하지 않는다.
 logTextLength3(10); // number에는 length 프로퍼티가 없으므로 에러 발생
 logTextLength3({ length: 10 }); // length 프로퍼티만 보장이 되면 error발생 안함
+
+// 제네릭 타입 제한 3 - keyof
+interface ShoppingItem {
+  name: string;
+  price: number;
+  stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+  return itemOption;
+}
+// getShoppingItemOption(10); // error: ShoppingItem에 정의된 key인 name, price, stock만 들어갈 수 있는데 다른게 들어왔으므로 추론과정에서 error 발생
+// getShoppingItemOption<string>('abc');
+getShoppingItemOption('name'); // 이건 error가 발생하지 않는다. ShoppingItem 안에 name 키가 있으므로.
