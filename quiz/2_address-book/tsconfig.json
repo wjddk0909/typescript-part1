@@ -4,7 +4,9 @@
     "checkJs": true,
     "target": "es5",
     "lib": ["es2015", "dom", "dom.iterable"],
-    "noImplicitAny": false
+    "noImplicitAny": true,
+    "strict": true,
+    "strictFunctionTypes": true  // 위의 strict 옵션 true 설정으로 업격한 검사를 이미 강제하고 있다. 이 옵션은 strict 옵션에 포함되긴 하지만 명시적으로 추가
   },
   "include": ["./src/**/*"]
 }
