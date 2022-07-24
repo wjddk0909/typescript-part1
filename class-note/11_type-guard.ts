@@ -23,3 +23,14 @@ if ((tony as Developer).skill) {
     let age = (tony as Person).age;
     console.log(age);
 }
+
+// 티입 가드
+function isDeveloper(target: Developer | Person): target is Developer {// Developer인지 아닌지
+    return (target as Developer).skill !== undefined; // skill이 있을때(undefined가 아닐때)
+}
+
+if(isDeveloper(tony)) {
+    console.log(tony.skill);
+} else {
+    console.log(tony.age);
+}
