@@ -105,6 +105,14 @@ class AddressBook {
   /* ------------------------------------------------ */
 }
 
+let div = document.querySelector('div');
+// div에 호버해보면 HTMLDivElement 또는 null일수 있다고 추론한다.
+// 때문에 바로 div.innerText등으로 사용하면 에러가 발생하기때문에 null이 아님을 보장해줘야함
+if (div) {
+  div.innerText;
+}
+// let div = document.querySelector('div') as HTMLDivElement; // 이렇게 타입 단언을 해서 null이 있는 유니온 타입이 아닌 타입을 단언해주는 방법도 있음
+
 // let heroes = [
 //   { name: 'Tony', age: 30 },
 //   { name: 'Captain', age: 100 },
