@@ -49,3 +49,11 @@ function assemble(a: Avengers) {
 }
 
 assemble(capt) //"어벤저스 모여라",  "Captain"
+
+// Enum 타입 호환 주의 사항
+enum Status { Ready, Waiting };
+
+enum Color { Red, Blue, Green };
+
+let status1 = Status.Ready;
+status1 = Color.Green;  // error
