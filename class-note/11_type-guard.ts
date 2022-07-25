@@ -34,3 +34,18 @@ if(isDeveloper(tony)) {
 } else {
     console.log(tony.age);
 }
+
+interface Avengers {
+    name: string;
+}
+
+let hero: Avengers;
+
+let capt = { name: 'Captain', location: 'Pangyo' }
+hero = capt
+
+function assemble(a: Avengers) {
+    console.log("어벤저스 모여라", a.name);
+}
+
+assemble(capt) //"어벤저스 모여라",  "Captain"
