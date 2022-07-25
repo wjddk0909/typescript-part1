@@ -57,3 +57,22 @@ enum Color { Red, Blue, Green };
 
 let status1 = Status.Ready;
 status1 = Color.Green;  // error
+
+// Class 타입 호환 주의 사항
+class Hulk {
+    handSize: number;
+    constructor(name: string, numHand: number) {
+    }
+}
+class Captain {
+    handSize: number;
+
+    constructor(numHand: number) {
+    }
+}
+
+let a: Hulk;
+let s: Captain;
+
+a = s; // OK
+s = a; // OK
