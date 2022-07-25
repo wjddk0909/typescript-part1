@@ -76,3 +76,19 @@ let s: Captain;
 
 a = s; // OK
 s = a; // OK
+
+// 타입호환 - Generics
+interface Empty<T> {
+}
+let x: Empty<number>;
+let y: Empty<string>;
+
+x = y; // OK
+
+interface NotEmpty<T>{
+    data: T;
+}
+let xx: NotEmpty<number>;
+let yy: NotEmpty<string>;
+
+xx = yy; // error
